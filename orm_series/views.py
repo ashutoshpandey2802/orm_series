@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .forms import Ratingform
-# Create your views here.
-
+from django.http import HttpResponse
+from core.forms import Ratingform
 
 def index(request):
+    # return render(request, "index.html")
     if request.method =='POST':
         form=Ratingform(request.POST or None)
         if form.is_valid():
